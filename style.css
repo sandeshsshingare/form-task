@@ -1,0 +1,9 @@
+.navbar {
+    background-color: rgb(195, 188, 180);
+    box-shadow: 5px 5px 20px black;
+    
+}
+#first-name,#last-name,#middle-name,#email-id,#password,#confirm-password {
+    box-shadow: 1px 1px 5px rgb(214, 65, 65);
+    /* box-shadow: -5px -5px 5px green; */
+}
