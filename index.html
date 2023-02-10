@@ -75,7 +75,7 @@
               id="password"
               class="form-control"
               aria-describedby="passwordhelp"
-              onkeyup="passwordf()"
+              onkeyup="passwordf(),pwd()"
             />
             <div class="form-text" id="passwordhelp">
               Password must contain alphanumeric and length is greater than 8.
@@ -87,7 +87,7 @@
             <label for="confirmpasswordfield" class="form-label">
               Confirm password*
             </label>
-            <input type="password" id="confirm-password" class="form-control" />
+            <input type="password" id="confirm-password" class="form-control" onkeyup="checkpwd()"/>
           </div>
         </div>
       </div>
