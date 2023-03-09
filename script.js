@@ -4,6 +4,7 @@ create_account.addEventListener("click", () => {
   var first_name = document.getElementById("first-name");
   var middle_name = document.getElementById("middle-name");
   var last_name = document.getElementById("last-name");
+  var dobf = document.getElementById("dob");
   var confirm_password = document.getElementById("confirm-password");
 
   var address1 = document.getElementById("address1");
@@ -20,10 +21,8 @@ create_account.addEventListener("click", () => {
   var state2 = document.getElementById("state2");
   var postal2 = document.getElementById("postal2");
 
-  var address1 = document.getElementById("address1");
-  //var address2 = document.getElementById("address2");
-  var city = document.getElementById("city");
-  var country = document.getElementById("country");
+  var emailget = document.getElementById("email-id");
+  var phonenoget = document.getElementById("pno");
 
   if (!dobverify()) {
     alert("Please fill date of birth!!!");
@@ -69,6 +68,33 @@ create_account.addEventListener("click", () => {
     ppost()
   ) {
     alert("hello your account is created succefully");
+
+    var details = {
+      fnameobj: first_name.value,
+      mnameobj: middle_name.value,
+      lnameobj: last_name.value,
+      dobobj: dobf.value,
+      address1: address1.value,
+      address2: address2.value,
+      city: city.value,
+      country: country.value,
+      state: state.value,
+      postal: postal.value,
+      address12: address12.value,
+      address22: address22.value,
+      city2: city2.value,
+      country2: country2.value,
+      state2: state2.value,
+      postal2: postal2.value,
+      confirm_password: confirm_password.value,
+      emailget: emailget.value,
+      phonenoget: phonenoget.value,
+    };
+    // details.fname = first_name.value();
+    var detailsArr = [];
+    detailsArr.push(details);
+    localStorage.setItem("formInfo", JSON.stringify(detailsArr));
+    alert(detailsArr);
   } else {
     alert("you didn't filled you details properly");
   }
@@ -104,7 +130,7 @@ checkp.addEventListener("change", () => {
 
     //address22.value =   address2.value;
   } else {
-    alert("please fill all required field!!!");
+    // alert("please fill all required field!!!");
     document.getElementById("check").checked = false;
     document.getElementById("address12").value = "";
     document.getElementById("address22").value = "";
@@ -163,7 +189,7 @@ function firstverify() {
   } else {
     f = true;
   }
- // alert("first value" + f);
+  // alert("first value" + f);
   return f;
 }
 
