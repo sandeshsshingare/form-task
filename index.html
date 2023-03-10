@@ -22,8 +22,8 @@
     <div class="div navbar navbar-expand-lg d-flex justify-content-center">
       <h2>Form Designing</h2>
     </div>
-    <div class="container mx-5 my-5 bg-light align-items-center">
-      <div class="row"><h5>Personal Info</h5></div>
+    <div class="container bg-light align-items-center">
+      <div class="row"><h5 class="pt-5">Personal Info</h5></div>
       <div class="row my-4">
         <div class="col">
           <label for="firstname" class="label">First name*</label>
@@ -102,7 +102,7 @@
         </div>
         <div class="col">
           <div class="label" for="state">State*</div>
-          <select class="form-control" id="state" onclick="stateverify()">
+          <select class="form-select" id="state" onclick="stateverify()">
             <option selected>Maharashtra</option>
             <option>Goa</option>
             <option>Karnataka</option>
@@ -160,12 +160,16 @@
         </div>
         <div class="col">
           <div class="label" for="state2">State*</div>
-          <input
+          <select
             type="text"
-            class="form-control"
+            class="form-select"
             placeholder="Select"
             id="state2"
-          />
+          >
+            <option selected>Maharashtra</option>
+            <option>Goa</option>
+            <option>Karnataka</option>
+          </select>
         </div>
         <div class="col">
           <div class="label" for="country2">Country*</div>

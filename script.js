@@ -69,10 +69,10 @@ create_account.addEventListener("click", () => {
   ) {
     alert("hello your account is created succefully");
 
-    var details = {
-      fnameobj: first_name.value,
-      mnameobj: middle_name.value,
-      lnameobj: last_name.value,
+    var formDetails = {
+      fname: first_name.value,
+      mname: middle_name.value,
+      lname: last_name.value,
       dobobj: dobf.value,
       address1: address1.value,
       address2: address2.value,
@@ -90,11 +90,23 @@ create_account.addEventListener("click", () => {
       emailget: emailget.value,
       phonenoget: phonenoget.value,
     };
+    fetch("https://winter-summer-sceptre.glitch.me/submit", {
+      method: "POST",
+      body: JSON.stringify(formDetails),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      // Converting to JSON
+      .then((response) => response.json(formDetails))
+      // Displaying results to console
+      .then((json) => console.log(json));
+
     // details.fname = first_name.value();
-    var detailsArr = [];
-    detailsArr.push(details);
-    localStorage.setItem("formInfo", JSON.stringify(detailsArr));
-    alert(detailsArr);
+    // var detailsArr = [];
+    // detailsArr.push(details);
+    // localStorage.setItem("formInfo", JSON.stringify(details));
+    // alert(details);
   } else {
     alert("you didn't filled you details properly");
   }
@@ -117,7 +129,7 @@ checkp.addEventListener("change", () => {
     city.value.trim() != "" &&
     country.value.trim() != "" &&
     state.value.trim() != "" &&
-    postal.value.trim() != ""
+    postverify()
   ) {
     //alert(postal.value);
     //  alert("clicked");
@@ -129,8 +141,11 @@ checkp.addEventListener("change", () => {
     document.getElementById("postal2").value = postal.value;
 
     //address22.value =   address2.value;
+  } else if (checkp.checked) {
+    alert("please fill all current field details properly!!!");
+    // alert(checkp.checked);
+    document.getElementById("check").checked = false;
   } else {
-    // alert("please fill all required field!!!");
     document.getElementById("check").checked = false;
     document.getElementById("address12").value = "";
     document.getElementById("address22").value = "";
