@@ -109,7 +109,7 @@ create_account.addEventListener("click", () => {
     // // details.fname = first_name.value();
     // // var detailsArr = [];
     // // detailsArr.push(details);
-    localStorage.setItem("formInfo", JSON.stringify(formDetails));
+    // localStorage.setItem("formInfo", JSON.stringify(formDetails));
     // // alert(details);
 
     fetch("https://winter-summer-sceptre.glitch.me/submit", {
