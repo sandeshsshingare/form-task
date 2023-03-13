@@ -20,7 +20,7 @@ create_account.addEventListener("click", function () {
     var emailget = document.getElementById("email-id");
     var phonenoget = document.getElementById("pno");
     if (!dobverify()) {
-        alert("Ple var passwordforcheckase fill date of birth!!!");
+        alert("Please fill date of birth!!!");
     }
     if (!phoneno()) {
         alert("Wrong mobile number");
@@ -93,7 +93,7 @@ create_account.addEventListener("click", function () {
         // // details.fname = first_name.value();
         // // var detailsArr = [];
         // // detailsArr.push(details);
-        localStorage.setItem("formInfo", JSON.stringify(formDetails));
+        // localStorage.setItem("formInfo", JSON.stringify(formDetails));
         // // alert(details);
         fetch("https://winter-summer-sceptre.glitch.me/submit", {
             method: "POST",

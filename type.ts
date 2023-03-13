@@ -29,7 +29,7 @@ create_account.addEventListener("click", () => {
   var phonenoget = document.getElementById("pno") as HTMLInputElement;
 
   if (!dobverify()) {
-    alert("Ple var passwordforcheckase fill date of birth!!!");
+    alert("Please fill date of birth!!!");
   }
   if (!phoneno()) {
     alert("Wrong mobile number");
